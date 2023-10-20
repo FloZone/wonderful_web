@@ -1,0 +1,87 @@
+body {
+  width: 600px;
+  margin: 0 auto 0 auto;
+  background-color: #000;
+  font-family: Verdana, sans-serif;
+  font-size: 1em;
+  text-align: center;
+  color: #ffffcc;
+  line-height: 60px;
+  user-select: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  margin: 0.25em 0 0.25em 0
+}
+
+#tone p {
+  display: inline;
+  margin-right: 1em;
+  font-size: 1.25em;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+  content: "";
+  width: 2em;
+  height: 2em;
+  background-color: rgb(255, 0, 157);
+  box-shadow: 0 0 20px rgb(255, 0, 157), inset 0 0 30px rgb(255, 0, 157);
+}
+
+.key {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0.6em;
+  background-color: rgb(46, 46, 46);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) inset;
+  border: 1px solid rgb(46, 46, 46);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.key:hover {
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.key p {
+  margin: 0;
+}
+
+.green .key:active, .green .key.active {
+  background-color: rgb(73, 181, 10);
+  border-color: rgb(73, 181, 10);
+  box-shadow: 0 0 20px rgb(73, 181, 10), inset 0 0 30px rgb(73, 181, 10);
+}
+
+.blue .key:active, .blue .key.active {
+  background-color: rgb(0, 209, 255);
+  border-color: rgb(0, 209, 255);
+  box-shadow: 0 0 20px rgb(0, 209, 255), inset 0 0 30px rgb(0, 209, 255);
+
+}
+
+.yellow .key:active, .yellow .key.active {
+  background-color: rgb(226, 163, 6);
+  border-color:  rgb(226, 163, 6);
+  box-shadow: 0 0 20px rgb(226, 163, 6), inset 0 0 30px rgb(226, 163, 6);
+}
+
+.red .key:active, .red .key.active {
+  background-color: rgb(242, 0, 2);
+  border-color:  rgb(242, 0, 2);
+  box-shadow: 0 0 20px rgb(242, 0, 2), inset 0 0 30px rgb(242, 0, 2);
+
+}
