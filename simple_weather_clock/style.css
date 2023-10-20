@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./Montserrat-Regular.ttf");
+}
+
+ @font-face {
+  font-family: "AirbnbCereal";
+  src: url("./AirbnbCereal-Light.ttf");
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: "AirbnbCereal"
+}
+
+#content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#clock {
+  font-size: 18em;
+}
+
+#weather {
+  transform: translateY(-30%);
+  text-align: end;
+  font-size: 4em;
+}
+
+#weather-city {
+  font-size: 0.75em;
+}
+
+#weather-desc {
+  transform: translateY(-25%);
+  font-size: 0.75em;
+}
+
+#weather-icon {
+  vertical-align: middle;
+  filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(294deg) brightness(104%) contrast(101%);
+}
+
+#weather-temp sup {
+  font-size: 0.5em;
+}
+
+#footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: grey;
+  font-size: 1.25em;
+}
