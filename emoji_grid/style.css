@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(15, 154, 108);
+  font-family: 'Courier New', monospace;
+  user-select: none;
+  font-size: 2em;
+}
+
+p {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
