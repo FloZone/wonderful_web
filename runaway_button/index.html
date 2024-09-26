@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Runaway button</title>
+  <link rel="icon" type="image/png" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🥷</text></svg>'>
+
+  <style>
+    body {
+      background-color: #B0D8E8;
+    }
+    #button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 20px 40px;
+      background-color: #FC8174;
+      font-weight: bold;
+      font-size: 24px;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="button">Clic me 🥷</button>
+</body>
+
+<script type="text/javascript">
+  var moving = false
+  const button = document.getElementById("button")
+  document.addEventListener("mousemove", (e) => {
+    // Center of button
+    const rect = button.getBoundingClientRect();
+    const x1 = rect.x + ((rect.right - rect.x) / 2)
+    const y1 = rect.y + ((rect.bottom - rect.y) / 2)
+    // Mouse position
+    const x2 = e.clientX
+    const y2 = e.clientY
+    // Distance
+    const distX = Math.sqrt((x2 - x1) * (x2 - x1))
+    const distY = Math.sqrt((y2 - y1) * (y2 - y1))
+    if (!moving && distX < 150 && distY < 75) {
+      const top = random(window.innerHeight - button.offsetHeight)
+      const left = random(window.innerWidth - button.offsetWidth)
+      move(button, top, left)
+    }
+  })
+
+  function random(max) {
+    return Math.floor(Math.random() * (max + 1))
+  }
+
+  function move(element, top, left) {
+    moving = true
+    const animation = element.animate({
+      top: `${top}px`,
+      left: `${left}px`,
+    }, {
+      duration: 250
+    })
+    animation.pause()
+
+    animation.onfinish = (event) => {
+      element.style.top = `${top}px`
+      element.style.left = `${left}px`
+      moving = false
+    }
+    animation.play()
+  }
+</script>
+</html>
