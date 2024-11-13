@@ -46,8 +46,11 @@ Card displaying the weather. [Try it here.](weather_card/)
 
 * Know the current day: [try it here](today/)
 * Know the not current day: [try it here](not_today/)
+* Know if you can MEP today: [try it here [fr]](est_ce_quon_met_en_prod_aujourdhui/)
+* Know if it is the weekend: [try it here [fr]](est_ce_que_cest_le_weekend/)
 
 # Really useless
 
 * Try to find it: [try it here](hide_and_seek/)
 * Try to click it: [try it here](runaway_button/)
+* Know if your device is on: [try it here](is_my_device_on/)

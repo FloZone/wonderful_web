@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Est-ce qu'on met en prod aujourd'hui ?</title>
+  <link rel="icon" type="image/png" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🗓️</text></svg>'>
+
+  <style>
+    p {
+      margin: 0.5em;
+      font-family: Verdana, sans-serif;
+      font-size: 3.5em;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="content"></p>
+</body>
+
+<script type="text/javascript">
+  switch (new Date().getDay()) {
+    case 0:
+    case 6:
+      document.getElementById("content").innerHTML = "Jamais le weekend, grand fou !"
+      break
+    case 5:
+      document.getElementById("content").innerHTML = "Certainement pas un vendredi !"
+      break
+    default:
+      document.getElementById("content").innerHTML = "Oui."
+  }
+</script>
+</html>
