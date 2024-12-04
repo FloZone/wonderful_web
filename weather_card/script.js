@@ -1,5 +1,5 @@
-// Personnal API key, will be valid soon
-const apiKey = "apikey_from_openweathermap";
+// API key from openweathermap: https://home.openweathermap.org/api_keys
+const apiKey = "7b1a599796a365aa6eed709b6b1a8223";
 
 function displayWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`;

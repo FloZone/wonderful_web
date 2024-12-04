@@ -1,3 +1,6 @@
+// API key from openweathermap: https://home.openweathermap.org/api_keys
+const apiKey = "7b1a599796a365aa6eed709b6b1a8223";
+
 function init() {
   // Clock
   startTime()
@@ -50,7 +53,6 @@ function checkTime(i) {
 }
 
 function displayWeather(city) {
-  const apiKey = "apikey_from_openweathermap.org"
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`
   fetch(url)
   .then(response => response.json())
