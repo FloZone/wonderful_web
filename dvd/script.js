@@ -4,12 +4,9 @@ let context
 let logo = {
   x: 200,
   y: 200,
-  scale: 1,
   speed: 250,
   xorientation: 1,
   yorientation: 1,
-  width: 0,
-  height: 0,
   color: colors[0],
   img: new Image()
 }
@@ -18,8 +15,6 @@ let lasttime = 0
 window.addEventListener("DOMContentLoaded", function() {
   // Logo init
   logo.img.src = "logo.svg"
-  logo.width = logo.img.width * logo.scale
-  logo.height = logo.img.height * logo.scale
   // Canvas init
   canvas = document.createElement("canvas")
   canvas.width = window.innerWidth
@@ -39,11 +34,11 @@ function draw() {
   context.fillStyle = "#000"
   // Draw logo
   context.fillRect(0, 0, canvas.width, canvas.height)
-  context.drawImage(logo.img, logo.x, logo.y, logo.width, logo.height)
+  context.drawImage(logo.img, logo.x, logo.y, logo.img.width, logo.img.height)
   // Logo color
   context.globalCompositeOperation = "multiply"
   context.fillStyle = logo.color
-  context.fillRect(logo.x, logo.y, logo.width, logo.height)
+  context.fillRect(logo.x, logo.y, logo.img.width, logo.img.height)
   // Move logo
   let move = computeMove(deltatime)
   logo.x += move[0]
@@ -67,14 +62,14 @@ function collided() {
   if (logo.x <= 0) {
     logo.xorientation = 1
     collided = true
-  } else if(logo.x + logo.width >= canvas.width) {
+  } else if(logo.x + logo.img.width >= canvas.width) {
     logo.xorientation = -1
     collided = true
   }
   if (logo.y <= 0) {
     logo.yorientation = 1
     collided = true
-  } else if (logo.y + logo.height >= canvas.height) {
+  } else if (logo.y + logo.img.height >= canvas.height) {
     logo.yorientation = -1
     collided = true
   }
